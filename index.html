@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vulnerability through Informal Employment | Decent Work Deficit</title>
+    <title>Vulnerability through Informal Employment | Agapay</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -17,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+
 </head>
 <body>
     
@@ -24,10 +25,12 @@
     <div class="noise-overlay"></div>
 
     <nav class="navigation">
-        <div class="nav-content">
-            <div class="logo">Decent Work Deficit</div>
-            <div class="progress-container">
-                <div class="progress-bar"></div>
+        <div class="nav-content" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Agapay</a>
+            <div class="nav-links" style="display: flex; gap: 2rem; align-items: center;">
+                <a href="index.html" style="color: var(--text-primary); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s;">Home</a>
+                <a href="articles.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s;">Articles</a>
+                <a href="about.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s;">About</a>
             </div>
         </div>
     </nav>
@@ -38,7 +41,7 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="split-text">Vulnerability Through<br>Informal Employment</h1>
-                    <p class="subtitle fade-up">Understanding the decent work deficit in the Philippines and how the lack of job security, benefits, and protections perpetuates poverty.</p>
+                    <p class="subtitle fade-up">Understanding why poverty persists in the Philippines, and how insecure, unprotected work keeps families financially exposed.</p>
                     <div class="scroll-indicator fade-up">
                         <span class="mouse">
                             <span class="mouse-wheel"></span>
@@ -48,15 +51,30 @@
                 </div>
             </div>
             <div class="bg-image-container parallax-bg">
-                <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=2070&auto=format&fit=crop" alt="Informal labor force in the Philippines" class="hero-bg" crossorigin="anonymous">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Skyline_in_Manila_16.jpg" alt="Informal labor force in the Philippines" class="hero-bg" crossorigin="anonymous">
                 <div class="overlay-gradient"></div>
             </div>
         </section>
 
+        <section class="section" style="padding-top: 3rem; padding-bottom: 2rem;">
+            <div class="container">
+                <div class="poverty-brief">
+                    <h2 class="poverty-brief-title">Poverty Persists Even When People Are Working</h2>
+                    <p class="poverty-brief-lead">Across many communities, families are working hard but still remain one illness, disaster, or weak market week away from deeper poverty. The data below shows how widespread low-security work has become and why this keeps household income unstable.</p>
+                    <ul class="poverty-brief-list">
+                        <li><strong>20.6 million</strong> workers are estimated in openly informal arrangements, including self-employed, unpaid family workers, and domestic workers.</li>
+                        <li><strong>3.3 million</strong> family workers are unpaid, signaling severe income insecurity at household level.</li>
+                        <li><strong>2.3 million</strong> domestic workers remain exposed to weak and inconsistent protection coverage.</li>
+                    </ul>
+                    <p class="poverty-brief-source">Source context: IBON Foundation analysis of official labor data (2025); BARMM Economic Briefer (Issue 4, 2024).</p>
+                </div>
+            </div>
+        </section>
+
         <!-- 2. Key Characteristics of Informal Work -->
-        <section id="characteristics">
+        <section id="characteristics" class="section">
             
-            <div class="contemporary-panel" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
+            <div class="contemporary-panel" style="padding: 4rem 0; display: flex; align-items: center; justify-content: center; position: relative;">
                 <div class="container relative z-10 w-full" style="width: 100%;">
                     <div class="flex-header text-center" style="margin-bottom: 4rem;">
                         <h2 class="section-title mx-auto contemp-title">The Reality of Informal Work</h2>
@@ -65,7 +83,7 @@
                     
                     <div class="content-card contemp-card mx-auto" style="max-width: 900px; padding: 0; overflow: hidden; display: flex; flex-direction: column; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 4px;" id="contemp-1">
                         <div class="card-image-wrapper" style="height: 350px; position: relative; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1541888062862-2391ce424855?auto=format&fit=crop&q=80&w=1200" alt="Rural informal workers" style="position: absolute; top: -10%; left: 0; width: 100%; height: 120%; object-fit: cover;" class="contemp-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Banaue_Philippines_Batad-Rice-Terraces-02.jpg" alt="Rural informal workers in the Philippines" style="position: absolute; top: -10%; left: 0; width: 100%; height: 120%; object-fit: cover;" class="contemp-img">
                             <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: linear-gradient(to top, var(--bg-surface) 0%, transparent 100%);"></div>
                         </div>
                         <div class="card-body" style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; position: relative; z-index: 10; margin-top: -2rem;">
@@ -78,11 +96,11 @@
                 </div>
             </div>
 
-            <div class="contemporary-panel" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; border-top: 1px solid var(--border-color);">
+            <div class="contemporary-panel" style="padding: 4rem 0; display: flex; align-items: center; justify-content: center; position: relative;">
                 <div class="container relative z-10 w-full" style="width: 100%;">
                     <div class="content-card contemp-card mx-auto" style="max-width: 900px; padding: 0; overflow: hidden; display: flex; flex-direction: column; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 4px;" id="contemp-2">
                         <div class="card-image-wrapper" style="height: 350px; position: relative; overflow: hidden;">
-                            <img src="https://images.unsplash.com/photo-1596484552993-8ef1dc225f46?auto=format&fit=crop&q=80&w=1200" alt="Income instability and struggles" style="position: absolute; top: -10%; left: 0; width: 100%; height: 120%; object-fit: cover;" class="contemp-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Sari-sari_Store.JPG" alt="Urban informal settlers and income instability" style="position: absolute; top: -10%; left: 0; width: 100%; height: 120%; object-fit: cover;" class="contemp-img">
                             <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: linear-gradient(to top, var(--bg-surface) 0%, transparent 100%);"></div>
                         </div>
                         <div class="card-body" style="padding: 2.5rem; flex: 1; display: flex; flex-direction: column; position: relative; z-index: 10; margin-top: -2rem;">
@@ -90,15 +108,12 @@
                             <h3 style="font-size: var(--step-3); margin-bottom: 1.5rem; font-family: 'Lora', serif;">Income Instability & Lack of Benefits</h3>
                             <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">Reliance on seasonal or market-driven work leads to uncertain earnings and financial exclusion. Such workers face life’s challenges completely exposed.</p>
                             
-                            <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: auto;">
-                                <div class="impact-box" style="background: rgba(56, 189, 115, 0.1); border: 1px solid rgba(56, 189, 115, 0.2); padding: 1.25rem;">
-                                    <span class="badge" style="background: rgba(56, 189, 115, 0.2); color: #38BD73; margin-bottom: 0.5rem;">Deficit in Services</span>
-                                    <span style="font-size: 0.95rem; color: var(--text-primary);">Total absence of health insurance, retirement, and unemployment support.</span>
-                                </div>
-                                <div class="impact-box" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); padding: 1.25rem;">
-                                    <span class="badge" style="background: rgba(239, 68, 68, 0.2); color: #EF4444; margin-bottom: 0.5rem;">Systemic Risks</span>
-                                    <span style="font-size: 0.95rem; color: var(--text-primary);">Amplifies severe risks during illness, disability, and major economic shocks.</span>
-                                </div>
+                            <div style="margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 1.1rem;">
+                                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.55rem; display: flex; align-items: flex-start; gap: 0.45rem;"><span style="color: var(--accent-hope); margin-top: 0.2rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span><span><strong style="color: var(--text-primary);">Scale of exposure:</strong> Around <strong style="color: var(--text-primary);">20.6 million</strong> workers are in openly informal work categories.</span></p>
+                                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.55rem; display: flex; align-items: flex-start; gap: 0.45rem;"><span style="color: var(--accent-hope); margin-top: 0.2rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span><span><strong style="color: var(--text-primary);">Unpaid labor:</strong> About <strong style="color: var(--text-primary);">3.3 million</strong> family workers receive no direct wage income.</span></p>
+                                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.55rem; display: flex; align-items: flex-start; gap: 0.45rem;"><span style="color: var(--accent-hope); margin-top: 0.2rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span><span><strong style="color: var(--text-primary);">Domestic work segment:</strong> Roughly <strong style="color: var(--text-primary);">2.3 million</strong> workers remain in jobs with uneven protection coverage.</span></p>
+                                    <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.55rem; display: flex; align-items: flex-start; gap: 0.45rem;"><span style="color: var(--accent-hope); margin-top: 0.2rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span><span><strong style="color: var(--text-primary);">Economic fragility:</strong> Earnings drop quickly during weak sales, disasters, or health shocks.</span></p>
+                                    <p style="font-size: 0.95rem; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 0.45rem;"><span style="color: var(--accent-hope); margin-top: 0.2rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span><span><strong style="color: var(--text-primary);">Systemic effect:</strong> Without stable protection, temporary setbacks become long-term poverty traps.</span></p>
                             </div>
                         </div>
                     </div>
@@ -111,12 +126,12 @@
         <section class="section" id="beyond">
             <div class="container relative">
                 <h2 class="section-title text-center">Connections to Vulnerability</h2>
-                <p class="text-center subtitle-small mx-auto">How the decent work deficit traps people in a cycle of poverty.</p>
+                <p class="text-center subtitle-small mx-auto">How weak job quality and low protection push households deeper into poverty.</p>
                 
                 <div class="multidimensional-grid mt-12">
                     <div class="dimension-card relative overflow-hidden" style="padding-bottom: 3rem;">
                         <div style="position: absolute; bottom:-20%; right:-10%; opacity:0.15; pointer-events:none;">
-                            <img src="https://images.unsplash.com/photo-1542884748-2b87b36c6b90?q=80&w=400&auto=format&fit=crop" style="width:150px; border-radius:50%;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Philippines_worker.jpg" style="width:150px; border-radius:50%;">
                         </div>
                         <div class="icon-wrapper relative z-10">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -126,7 +141,7 @@
                     </div>
                     <div class="dimension-card relative overflow-hidden" style="padding-bottom: 3rem;">
                         <div style="position: absolute; bottom:-20%; right:-10%; opacity:0.15; pointer-events:none;">
-                            <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=400&auto=format&fit=crop" style="width:150px; border-radius:50%;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Malapascua%2C_Filipino_girl%2C_Filipina%2C_Philippines.jpg" style="width:150px; border-radius:50%;">
                         </div>
                         <div class="icon-wrapper relative z-10">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg>
@@ -136,7 +151,7 @@
                     </div>
                     <div class="dimension-card relative overflow-hidden" style="padding-bottom: 3rem;">
                         <div style="position: absolute; bottom:-20%; right:-10%; opacity:0.15; pointer-events:none;">
-                            <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?q=80&w=400&auto=format&fit=crop" style="width:150px; border-radius:50%;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Gabriel_Daza_April_1921.jpg" style="width:150px; border-radius:50%;">
                         </div>
                         <div class="icon-wrapper relative z-10">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -146,7 +161,7 @@
                     </div>
                     <div class="dimension-card relative overflow-hidden" style="padding-bottom: 3rem;">
                         <div style="position: absolute; bottom:-20%; right:-10%; opacity:0.15; pointer-events:none;">
-                            <img src="https://images.unsplash.com/photo-1588612502660-f38b29bb3c19?q=80&w=400&auto=format&fit=crop" style="width:150px; border-radius:50%;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Malapascua%2C_Filipino_girl%2C_Filipina%2C_Philippines.jpg" style="width:150px; border-radius:50%;">
                         </div>
                         <div class="icon-wrapper relative z-10">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -159,9 +174,9 @@
         </section> <!-- End Beyond Globalization Dimensions -->
 
         <!-- Globalization's Impact Fullwidth Breakout Section -->
-        <section class="section p-0" id="globalization-impact" style="position: relative; overflow: hidden; height: 100vh; display: flex; align-items: center; justify-content: center;">
+        <section class="section p-0" id="globalization-impact" style="position: relative; overflow: hidden; padding: 8rem 0; display: flex; align-items: center; justify-content: center;">
             <div class="interdependence-bg" style="position: absolute; top:0; left:0; width:100%; height:120%; z-index:0; transform: translateY(-10%);">
-                <img src="https://images.unsplash.com/photo-1581290680602-990a42f56784?q=80&w=2072&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35; filter: grayscale(100%) contrast(1.2);">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Slum_in_Manila_during_flooding_%284046572466%29.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.35; filter: grayscale(100%) contrast(1.2);">
                 <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, var(--bg-base) 0%, transparent 20%, transparent 80%, var(--bg-base) 100%);"></div>
             </div>
             
@@ -182,14 +197,14 @@
         <section class="section actors-section" id="evidence">
             <div class="container mx-auto margin-bottom-large text-center">
                 <h2 class="section-title">Supporting Evidence</h2>
-                <p class="subtitle-small mx-auto">Research and reports underscoring the severity of the decent work deficit.</p>
+                <p class="subtitle-small mx-auto">Research and reports showing how unstable work conditions sustain poverty risks.</p>
             </div>
             
             <div class="container">
                 <div class="actors-vertical-grid">
                     <div class="actor-card bg-1 overflow-hidden relative">
                         <div class="actor-image-bg" style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0.1; z-index:0; pointer-events:none;">
-                            <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?q=80&w=2070&auto=format&fit=crop" style="width:100%; height:100%; object-fit:cover;" alt="World Bank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Ayala_Avenue%2C_Makati_Avenue%2C_PSE_%28Makati%3B_01-31-2021%29.jpg" style="width:100%; height:100%; object-fit:cover;" alt="World Bank">
                         </div>
                         <div class="actor-content relative z-10">
                             <div class="actor-header">
@@ -205,7 +220,7 @@
                     </div>
                     <div class="actor-card bg-2 overflow-hidden relative">
                         <div class="actor-image-bg" style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0.1; z-index:0; pointer-events:none;">
-                            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=2070&auto=format&fit=cover" style="width:100%; height:100%; object-fit:cover;" alt="BARMM">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Eid%E2%80%99l_Fitr_Bangsamoro_Government_Center.jpg" style="width:100%; height:100%; object-fit:cover;" alt="BARMM">
                         </div>
                         <div class="actor-content relative z-10">
                             <div class="actor-header">
@@ -221,7 +236,7 @@
                     </div>
                     <div class="actor-card bg-3 overflow-hidden relative">
                         <div class="actor-image-bg" style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0.1; z-index:0; pointer-events:none;">
-                            <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=2070&auto=format&fit=crop" style="width:100%; height:100%; object-fit:cover;" alt="UP Diliman">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/UP_Diliman_Oblation_Plaza_in_2011.JPG" style="width:100%; height:100%; object-fit:cover;" alt="UP Diliman">
                         </div>
                         <div class="actor-content relative z-10">
                             <div class="actor-header">
@@ -237,7 +252,7 @@
                     </div>
                     <div class="actor-card bg-4 overflow-hidden relative">
                         <div class="actor-image-bg" style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0.1; z-index:0; pointer-events:none;">
-                            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2072&auto=format&fit=crop" style="width:100%; height:100%; object-fit:cover;" alt="ILO Reports">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Slum_in_Manila_during_flooding_%284046572466%29.jpg" style="width:100%; height:100%; object-fit:cover;" alt="ILO Reports">
                         </div>
                         <div class="actor-content relative z-10">
                             <div class="actor-header">
@@ -253,7 +268,7 @@
                     </div>
                     <div class="actor-card bg-5 overflow-hidden relative">
                         <div class="actor-image-bg" style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0.1; z-index:0; pointer-events:none;">
-                            <img src="https://images.unsplash.com/photo-1542884748-2b87b36c6b90?q=80&w=2070&auto=format&fit=crop" style="width:100%; height:100%; object-fit:cover;" alt="ASEAN/Policy Briefs">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Flag_of_the_Philippines.svg" style="width:100%; height:100%; object-fit:cover;" alt="ASEAN/Policy Briefs">
                         </div>
                         <div class="actor-content relative z-10">
                             <div class="actor-header">
@@ -272,14 +287,14 @@
         </section>
 
         <!-- 5. Dimensions of Vulnerability (Layered Scrolling) -->
-        <section id="causes-effects" style="position: relative;">
-            <div class="split-side causes-side" style="position: sticky; top:0; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <section id="causes-effects" style="position: relative; background: var(--bg-base);">
+            <div class="split-side causes-side" style="padding: 6rem 0; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
                 <div class="split-bg" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0; opacity: 0.15;">
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2070&auto=format&fit=crop" style="width:100%; height:100%; object-fit:cover;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Skyline_in_Manila_16.jpg" style="width:100%; height:100%; object-fit:cover;">
                     <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: var(--bg-base); opacity: 0.8;"></div>
                 </div>
                 <div class="container relative z-10">
-                    <div class="split-content mx-auto" style="max-width: 800px; padding: 3.5rem; border-radius: 4px; background: var(--bg-surface); border: 1px solid var(--border-color); transform: translateY(50px); opacity: 0;" id="causes-box">
+                      <div class="split-content mx-auto" style="max-width: 800px; padding: 3.5rem; border-radius: 4px; background: var(--bg-surface); border: 1px solid var(--border-color);" id="causes-box">
                         <div style="display:flex; align-items:center; gap: 1rem; margin-bottom: 2rem;">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                             <h2 class="title-accent" style="margin-bottom:0; font-size: var(--step-4); font-family: 'Lora', serif;">Structural Causes</h2>
@@ -302,13 +317,13 @@
                 </div>
             </div>
 
-            <div class="split-side effects-side" style="position: relative; z-index: 2; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; border-top: 1px solid var(--border-color);">
+            <div class="split-side effects-side" style="position: relative; z-index: 2; padding: 6rem 0; display: flex; align-items: center; justify-content: center; overflow: hidden; border-top: 1px solid var(--border-color);">
                 <div class="split-bg" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0; opacity: 0.15;">
-                    <img src="https://images.unsplash.com/photo-1541888062862-2391ce424855?q=80&w=2070&auto=format&fit=crop" style="width:100%; height:100%; object-fit:cover;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Ayala_Avenue%2C_Makati_Avenue%2C_PSE_%28Makati%3B_01-31-2021%29.jpg" style="width:100%; height:100%; object-fit:cover;">
                     <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: var(--bg-surface); opacity: 0.85;"></div>
                 </div>
                 <div class="container relative z-10 w-full" style="width: 100%;">
-                    <div class="split-content mx-auto" style="max-width: 800px; padding: 3.5rem; border-radius: 4px; background: var(--bg-surface-elevated); border: 1px solid var(--border-color); transform: translateY(50px); opacity: 0;" id="effects-box">
+                      <div class="split-content mx-auto" style="max-width: 800px; padding: 3.5rem; border-radius: 4px; background: var(--bg-surface-elevated); border: 1px solid var(--border-color);" id="effects-box">
                         <div style="display:flex; align-items:center; gap: 1rem; margin-bottom: 2rem;">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                             <h2 class="title-accent" style="margin-bottom:0; font-size: var(--step-4); font-family: 'Lora', serif;">Human Effects</h2>
@@ -414,17 +429,17 @@
             <div class="container relative z-10 text-center">
                 <h2 class="title-accent mx-auto mb-8">Poverty & Informality in Numbers</h2>
                 <div style="display:flex; flex-wrap:wrap; gap: 2rem; justify-content:center;">
-                    <div class="stat-card" style="flex:1; min-width:250px; background:var(--bg-base); padding: 2rem; border-radius:4px; border: 1px solid var(--border-color); transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);">
-                        <div style="font-size: var(--step-5); font-family: 'Lora', serif; color: var(--accent-hope); font-weight:700; line-height: 1;"><span class="count-up" data-target="90">0</span>%</div>
-                        <p style="margin-top: 1rem; color:var(--text-secondary);">Of low-paid jobs in the country are informal, severely blocking upward mobility.</p>
+                    <div class="stat-card" style="flex:1; min-width:250px; background:var(--bg-base); padding: 2rem; border-radius:4px; border: 1px solid var(--border-color); transition: transform 0.3s var(--ease-out-quint), box-shadow 0.3s var(--ease-out-quint);">
+                        <div style="font-size: var(--step-5); font-family: 'Lora', serif; color: var(--accent-hope); font-weight:700; line-height: 1;"><span class="count-up" data-target="20.6" data-decimals="1">0</span>M</div>
+                        <p style="margin-top: 1rem; color:var(--text-secondary);">Estimated openly informal workers across self-employment, family labor, and domestic work categories.</p>
                     </div>
-                    <div class="stat-card" style="flex:1; min-width:250px; background:var(--bg-base); padding: 2rem; border-radius:4px; border: 1px solid var(--border-color); transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);">
-                        <div style="font-size: var(--step-5); font-family: 'Lora', serif; color: var(--accent-hope); font-weight:700; line-height: 1;"><span class="count-up" data-target="56">0</span>%</div>
-                        <p style="margin-top: 1rem; color:var(--text-secondary);">Proportion of informal workers enduring completely low or unstable pay.</p>
+                    <div class="stat-card" style="flex:1; min-width:250px; background:var(--bg-base); padding: 2rem; border-radius:4px; border: 1px solid var(--border-color); transition: transform 0.3s var(--ease-out-quint), box-shadow 0.3s var(--ease-out-quint);">
+                        <div style="font-size: var(--step-5); font-family: 'Lora', serif; color: var(--accent-hope); font-weight:700; line-height: 1;"><span class="count-up" data-target="3.3" data-decimals="1">0</span>M</div>
+                        <p style="margin-top: 1rem; color:var(--text-secondary);">Unpaid family workers, indicating severe household income insecurity.</p>
                     </div>
-                    <div class="stat-card" style="flex:1; min-width:250px; background:var(--bg-base); padding: 2rem; border-radius:4px; border: 1px solid var(--border-color); transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);">
-                        <div style="font-size: var(--step-5); font-family: 'Lora', serif; color: var(--accent-hope); font-weight:700; line-height: 1;"><span class="count-up" data-target="0">0</span></div>
-                        <p style="margin-top: 1rem; color:var(--text-secondary);">Access to health insurance, standard retirement, or unemployment protections.</p>
+                    <div class="stat-card" style="flex:1; min-width:250px; background:var(--bg-base); padding: 2rem; border-radius:4px; border: 1px solid var(--border-color); transition: transform 0.3s var(--ease-out-quint), box-shadow 0.3s var(--ease-out-quint);">
+                        <div style="font-size: var(--step-5); font-family: 'Lora', serif; color: var(--accent-hope); font-weight:700; line-height: 1;"><span class="count-up" data-target="2.3" data-decimals="1">0</span>M</div>
+                        <p style="margin-top: 1rem; color:var(--text-secondary);">Domestic workers, many of whom remain outside stable and comprehensive protection systems.</p>
                     </div>
                 </div>
             </div>
@@ -437,10 +452,16 @@
                 <p class="conclusion-text">
                     Poverty in the Philippines is perpetuated by the decent work deficit resulting from vast informal employment. By prioritizing legal recognition, targeted social protections, and easing transitions to formal work, we can build an economy where basic safety, opportunities, and dignity are guaranteed for all—not just the privileged few.
                 </p>
-                <a href="#intro" class="back-to-top mt-12" style="display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; background: var(--bg-surface-elevated); border: 1px solid var(--text-muted); color: var(--text-primary); text-decoration: none; font-weight: 500; transition: background 0.3s ease;">
-                    Return to Top
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="ml-2" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-                </a>
+                <div class="button-group mt-12" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="articles.html" class="primary-btn">
+                        See More Articles
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="ml-2" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#intro" class="secondary-btn">
+                        Return to Top
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="ml-2" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem;"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -450,11 +471,11 @@
         <div class="container">
             <h3>References & Sources</h3>
             <ul class="references-list">
-                <li>World Bank (2015). <em>Informal and rural workers face high poverty risks</em>.</li>
-                <li>BARMM Economic Briefer (2024). <em>Vulnerability of informal workers without social protection</em>.</li>
-                <li>UP Diliman Studies. <em>Informality hinders decent work and poverty eradication</em>.</li>
-                <li>ILO Reports. <em>Decent work deficits and the informal economy</em>.</li>
-                <li>ASEAN/Policy Briefs. <em>Calls for expanded social security</em>.</li>
+                <li>IBON Foundation (2025). <em>Labor market analysis on informal employment composition in the Philippines</em>.</li>
+                <li>Parliament of the Bangsamoro Autonomous Region in Muslim Mindanao (BARMM), Ministry of Labor and Employment (2024). <em>BARMM Economic Briefer, Issue 4</em>.</li>
+                <li>Philippine Statistics Authority (PSA). <em>Labor Force Survey (LFS) statistical releases and labor indicators</em>.</li>
+                <li>Department of Labor and Employment (DOLE). <em>Domestic Workers Act (Batas Kasambahay) implementation and labor standards references</em>.</li>
+                <li>Philippine Institute for Development Studies (PIDS). <em>Policy studies on informality, labor vulnerability, and social protection</em>.</li>
             </ul>
         </div>
     </footer>

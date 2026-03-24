@@ -45,33 +45,8 @@ gsap.to(".hero-bg", {
     } 
 });
 
-// Progress Bar
-gsap.to(".progress-bar", {
-    width: "100%",
-    ease: "none",
-    scrollTrigger: {
-        trigger: "body",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.3
-    }
-});
-
-// The Contemporary World split panel revealing
-gsap.fromTo(".contemp-title, .contemp-subtitle", 
-    { y: 30, opacity: 0 },
-    {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-            trigger: "#contemp-1",
-            start: "top 80%",
-        }
-    }
-);
+// gsap.fromTo(".characteristics-item", 
+// );
 
 const contempCards = gsap.utils.toArray('.contemp-card');
 contempCards.forEach(card => {
@@ -136,27 +111,33 @@ interTl.fromTo(".split-text-panel",
 );
 
 // Causes and Effects Scroll Reveal
-gsap.to("#causes-box", {
-    y: 0,
-    opacity: 1,
-    duration: 1.2,
-    ease: "power3.out",
-    scrollTrigger: {
-        trigger: ".causes-side",
-        start: "top center",
+gsap.fromTo("#causes-box", 
+    { y: 50, opacity: 0 },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".causes-side",
+            start: "top 80%",
+        }
     }
-});
+);
 
-gsap.to("#effects-box", {
-    y: 0,
-    opacity: 1,
-    duration: 1.2,
-    ease: "power3.out",
-    scrollTrigger: {
-        trigger: ".effects-side",
-        start: "top center",
+gsap.fromTo("#effects-box", 
+    { y: 50, opacity: 0 },
+    {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".effects-side",
+            start: "top 80%",
+        }
     }
-});
+);
 
 // Accordion (Ways Forward)
 const accordionItems = document.querySelectorAll('.accordion-item');
@@ -199,24 +180,22 @@ counters.forEach(counter => {
     const target = parseFloat(counter.getAttribute('data-target'));
     const decimals = parseInt(counter.getAttribute('data-decimals')) || 0;
     
-    gsap.to(counter, {
-        innerHTML: target,
+    // Use an object to hold the value to animate
+    let animObject = { val: 0 };
+    
+    gsap.to(animObject, {
+        val: target,
         duration: 2.5,
-        ease: "power3.out",
+        ease: "power2.out",
         scrollTrigger: {
             trigger: counter,
             start: "top 85%",
         },
-        snap: { innerHTML: Math.pow(10, -decimals) },
         onUpdate: function() {
-            // Re-format to the fixed decimals
-            const val = parseFloat(counter.innerHTML).toFixed(decimals);
-            counter.innerHTML = val;
+            counter.innerText = animObject.val.toFixed(decimals);
         }
     });
 });
-
-
 
 // Smooth scroll to top
 const scrollToTopBtns = document.querySelectorAll('.back-to-top, .logo');
@@ -230,3 +209,33 @@ scrollToTopBtns.forEach(btn => {
         });
     });
 });
+
+// Supporting Evidence (Actor Cards) Reveal
+const actorCards = gsap.utils.toArray('.actor-card');
+actorCards.forEach((card, i) => {
+    gsap.fromTo(card,
+        { y: 50, opacity: 0 },
+        {
+            y: 0, opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+            }
+        }
+    );
+});
+
+// Accordion Reveal
+const accordionReveal = gsap.utils.toArray('.accordion-item');
+gsap.fromTo(accordionReveal,
+    { y: 30, opacity: 0 },
+    {
+        y: 0, opacity: 1, stagger: 0.1, duration: 1, ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".ways-forward-section",
+            start: "top 75%"
+        }
+    }
+);

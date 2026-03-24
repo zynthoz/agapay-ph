@@ -11,23 +11,37 @@
     --step-6: clamp(3.3592rem, 2.8691rem + 2.4505vw, 4.7684rem);
     --step-7: clamp(4.0311rem, 3.3601rem + 3.355vw, 5.9605rem);
 
-    /* Academic Dark Mode Palette */
-    --bg-base: oklch(0.20 0.01 250); /* Dark slate */
-    --bg-surface: oklch(0.24 0.01 250);
-    --bg-surface-elevated: oklch(0.28 0.01 250);
+    /* Academic Light Mode Palette */
+    --bg-base: #fbf9f4; /* Natural paper */
+    --bg-surface: #f1ebd9;
+    --bg-surface-elevated: #e6dec1;
     
-    --text-primary: oklch(0.95 0.01 70); /* Warm off-white, easy to read */
-    --text-secondary: oklch(0.80 0.01 70);
-    --text-muted: oklch(0.65 0.01 70);
-    --border-color: oklch(0.35 0.01 250);
+    --text-primary: #1c1a17; /* Deep ink */
+    --text-secondary: #4b463e;
+    --text-muted: #746d61;
+    --border-color: rgba(28, 26, 23, 0.15);
 
     /* Accents: Muted, academic tones instead of neon */
     --accent-hope: oklch(0.65 0.1 50); /* Sepia / Terra Cotta */
     --accent-glow: oklch(0.6 0.08 220); /* Muted slate blue */
-    
+
+    /* Animation Easing */
+    --ease-out-quart: var(--ease-out-quart);
+    --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-out-expo: var(--ease-out-expo);
+
     /* Layout */
     --container-width: 1200px;
     --section-spacing: clamp(4rem, 10vw, 10rem);
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Reset & Scaffolding */
@@ -44,6 +58,36 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+}
+
+
+a {
+    color: var(--accent-hope);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s var(--ease-out-quint);
+}
+
+a:hover {
+    color: var(--text-primary);
+}
+
+a:not(.primary-btn, .secondary-btn, .brand-logo, .logo, .nav-links a)::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-primary);
+    transform-origin: bottom right;
+    transition: transform 0.3s var(--ease-out-quint);
+}
+
+a:not(.primary-btn, .secondary-btn, .brand-logo, .logo, .nav-links a):hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 ::selection {
@@ -96,8 +140,12 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
-    padding: 1.5rem 0;
-    mix-blend-mode: difference;
+    padding: 1rem 0;
+    background: oklch(from var(--bg-base) l c h / 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 .nav-content {
@@ -109,10 +157,11 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 }
 
 .logo {
-    font-family: 'Lora', serif;
+    font-family: 'Cinzel', serif;
     font-weight: 700;
     font-size: var(--step-0);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: var(--text-primary);
 }
 
@@ -228,6 +277,64 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     max-width: 600px;
 }
 
+/* Opening poverty statement: stronger hierarchy and readability */
+.poverty-brief {
+    max-width: 980px;
+    margin: 0 auto;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: clamp(2rem, 4vw, 3.2rem);
+}
+
+.poverty-brief-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(2.1rem, 3.4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    margin-bottom: 1.1rem;
+    color: var(--text-primary);
+}
+
+.poverty-brief-lead {
+    font-size: clamp(1.12rem, 1.2vw, 1.32rem);
+    line-height: 1.72;
+    color: var(--text-secondary);
+    margin-bottom: 1.35rem;
+    max-width: 78ch;
+}
+
+.poverty-brief-list {
+    margin-left: 1.35rem;
+    display: grid;
+    gap: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.poverty-brief-list li {
+    font-size: clamp(1.02rem, 1.05vw, 1.2rem);
+    line-height: 1.65;
+    padding-left: 0.15rem;
+}
+
+.poverty-brief-list li::marker {
+    color: color-mix(in oklch, var(--accent-hope) 75%, var(--text-primary));
+}
+
+.poverty-brief-list strong {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.08em;
+}
+
+.poverty-brief-source {
+    margin-top: 1.25rem;
+    font-size: clamp(0.95rem, 0.95vw, 1.02rem);
+    color: var(--text-muted);
+    line-height: 1.55;
+}
+
 .line-decorator {
     height: 2px;
     width: 60px;
@@ -330,7 +437,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     padding: 2.5rem 2rem;
     border-radius: 1.5rem;
     border: 1px solid rgba(255,255,255,0.03);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
+    transition: transform 0.4s var(--ease-out-expo), border-color 0.4s;
     overflow: hidden;
     position: relative;
 }
@@ -367,7 +474,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 }
 
 .icon-wrapper svg {
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s var(--ease-out-expo);
 }
 
 .dimension-card h4 {
@@ -427,7 +534,8 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 
 /* Actors Vertical Grid */
 .actors-section {
-    padding: var(--section-spacing) 0;
+    padding-top: var(--section-spacing);
+    padding-bottom: clamp(2rem, 5vw, 4rem);
 }
 
 .margin-bottom-large {
@@ -439,7 +547,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     grid-template-columns: repeat(12, 1fr);
     gap: clamp(1.5rem, 2vw, 2.5rem);
     align-items: start;
-    padding-bottom: 4rem;
+    padding-bottom: 0;
 }
 
 .actor-card {
@@ -451,7 +559,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     overflow: hidden;
     border: 1px solid var(--border-color);
     background: var(--bg-surface);
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+    transition: transform 0.6s var(--ease-out-quart), 
                 border-color 0.4s ease, 
                 box-shadow 0.5s ease;
 }
@@ -475,6 +583,28 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     .bg-5 {
         display: block;
     }
+
+    .poverty-brief {
+        padding: 1.6rem 1.3rem;
+    }
+
+    .poverty-brief-title {
+        font-size: clamp(1.75rem, 7.8vw, 2.4rem);
+    }
+
+    .poverty-brief-lead {
+        font-size: 1.06rem;
+        line-height: 1.66;
+    }
+
+    .poverty-brief-list {
+        margin-left: 1.1rem;
+        gap: 0.7rem;
+    }
+
+    .poverty-brief-list li {
+        font-size: 1rem;
+    }
 }
 
 .actor-card:hover {
@@ -494,7 +624,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     width: 100%; height: 100%; object-fit: cover;
     opacity: 0.12;
     filter: grayscale(100%) contrast(1.1);
-    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
+    transition: transform 1.2s var(--ease-out-quart), 
                 opacity 0.6s ease, 
                 filter 0.6s ease;
 }
@@ -515,7 +645,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     position: absolute;
     top: 1rem; 
     right: 1.5rem;
-    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+    transition: transform 0.8s var(--ease-out-quart), 
                 color 0.6s ease,
                 opacity 0.6s ease;
     pointer-events: none;
@@ -668,7 +798,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 .plus-icon {
     width: 24px; height: 24px;
     position: relative;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s var(--ease-out-expo);
 }
 
 .plus-icon::before, .plus-icon::after {
@@ -688,7 +818,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: max-height 0.6s var(--ease-out-expo);
 }
 
 .accordion-item.active .accordion-content {
@@ -732,6 +862,7 @@ h1, h2, h3, h4, h5, h6, .brand-font {
     font-size: var(--step-6);
     margin-bottom: 2rem;
     background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -759,6 +890,57 @@ h1, h2, h3, h4, h5, h6, .brand-font {
 .back-to-top:hover {
     background: var(--accent-hope);
     color: var(--bg-base);
+}
+
+/* Button Component Styles */
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    background: var(--text-primary);
+    color: var(--bg-base);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s var(--ease-out-quint), background-color 0.2s var(--ease-out-quint), box-shadow 0.2s var(--ease-out-quint);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0);
+}
+
+.primary-btn:hover {
+    background: var(--accent-hope);
+    color: var(--bg-base);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.primary-btn:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background: var(--bg-surface-elevated);
+    border: 1px solid var(--text-muted);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s var(--ease-out-quint), transform 0.2s var(--ease-out-quint), border-color 0.2s var(--ease-out-quint);
+    border-radius: 4px;
+}
+
+.secondary-btn:hover {
+    background: var(--bg-surface);
+    border-color: var(--text-primary);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.secondary-btn:active {
+    transform: translateY(1px) scale(0.98);
 }
 
 /* Footer */

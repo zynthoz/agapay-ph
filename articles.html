@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles | Agapay</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+
+    <style>
+        .article-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-hope);
+        }
+        .article-content {
+            padding: 1.75rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-hope);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .article-title {
+            font-family: 'Lora', serif;
+            font-size: var(--step-1);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .article-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+        .article-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Dynamic Background Grain for Texture -->
+    <div class="noise-overlay"></div>
+
+    <nav class="navigation">
+        <div class="nav-content" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">Agapay</a>
+            <div class="nav-links" style="display: flex; gap: 2rem; align-items: center;">
+                <a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s;">Home</a>
+                <a href="articles.html" style="color: var(--text-primary); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s;">Articles</a>
+                <a href="about.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s;">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding-top: 15vh; min-height: 100vh;">
+        <section class="section pt-0">
+            <div class="container text-center">
+                <h1 class="split-text" style="font-family: 'Lora', serif; font-size: var(--step-5); margin-bottom: 1rem;">Research & Perspectives</h1>
+                <p class="subtitle fade-up mx-auto" style="max-width: 600px; color: var(--text-secondary); font-size: var(--step-0);">
+                    Deeper dives into labor policies, global economic systems, and pathways to sustainable livelihoods.
+                </p>
+            </div>
+            
+            <div class="container mt-12 pb-12">
+                <div class="article-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                    
+                    <!-- Article 1 -->
+                    <a href="report.html?article=trapped-in-the-shadows" class="article-card fade-up">
+                        <div class="article-content">
+                            <span class="article-tag">Featured Analysis</span>
+                            <h3 class="article-title">Trapped in the Shadows - Informal Work's Grip on Filipino Lives</h3>
+                            <p class="article-excerpt">A report-based analysis of how employment growth can mask deepening informality, unstable incomes, and weak social protection coverage.</p>
+                            <div class="article-footer">
+                                <span>Read Report</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="report.html?article=no-safety-nets-no-future" class="article-card fade-up">
+                        <div class="article-content">
+                            <span class="article-tag">Policy Review</span>
+                            <h3 class="article-title">No Safety Nets, No Future - LGU Spotlights on Informal Struggles</h3>
+                            <p class="article-excerpt">Findings from LGU briefers on income volatility, exclusion from protections, and local policy paths for labor formalization.</p>
+                            <div class="article-footer">
+                                <span>Read Report</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 3 -->
+                    <a href="report.html?article=ibons-wake-up-call" class="article-card fade-up">
+                        <div class="article-content">
+                            <span class="article-tag">Economics</span>
+                            <h3 class="article-title">IBON's Wake-Up Call - When "Jobs" Mean Desperation in the Philippines</h3>
+                            <p class="article-excerpt">A focused report on why rising employment counts can coincide with expanding informality and persistent structural vulnerability.</p>
+                            <div class="article-footer">
+                                <span>Read Report</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 4 -->
+                    <a href="report.html?article=lgu-frontlines" class="article-card fade-up">
+                        <div class="article-content">
+                            <span class="article-tag">Solutions</span>
+                            <h3 class="article-title">LGU Frontlines - BARMM's Raw Truth on Informal Worker Woes</h3>
+                            <p class="article-excerpt">Ground-level evidence and practical LGU strategies for labor-code enforcement, social protection expansion, and local resilience building.</p>
+                            <div class="article-footer">
+                                <span>Read Report</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Agapay Research Initiative</p>
+        </div>
+    </footer>
+
+    <!-- Simplified Script for Articles Page -->
+    <script>
+        // Setup GSAP plugins
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Optional: Smooth scrolling initialization
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Basic animations
+        gsap.utils.toArray('.fade-up').forEach((el, i) => {
+            gsap.fromTo(el, 
+                { y: 30, opacity: 0 }, 
+                {
+                    y: 0, opacity: 1, 
+                    duration: 0.8, 
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    },
+                    delay: el.classList.contains('article-card') ? (i % 4) * 0.1 : 0
+                }
+            );
+        });
+
+        // Split text animation
+        const title = document.querySelector('.split-text');
+        if(title) {
+            const text = title.innerText;
+            title.innerHTML = '';
+            text.split(' ').forEach(word => {
+                const span = document.createElement('span');
+                span.innerText = word + ' ';
+                span.style.display = 'inline-block';
+                span.style.opacity = '0';
+                span.style.transform = 'translateY(20px)';
+                title.appendChild(span);
+            });
+            gsap.to(title.children, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power3.out"
+            });
+        }
+    </script>
+</body>
+</html>
